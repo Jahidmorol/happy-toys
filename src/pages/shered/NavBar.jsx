@@ -18,7 +18,7 @@ const NavBar = () => {
         <div className="relative flex items-center justify-between">
           {/* Logo Section */}
           <Link to="/">
-                <h2 className='text-lg font-bold text-white '>Happy Toys</h2>
+                <h2 className='text-2xl font-bold text-white '>Happy Toys</h2>
             {/* <img className="mb-1 w-36 md:w-44 " src='' alt="" /> */}
           </Link>
 
