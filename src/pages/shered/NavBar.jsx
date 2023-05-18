@@ -1,29 +1,27 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaRegTimesCircle, FaUserCircle } from "react-icons/fa";
-import { useContext } from 'react';
-import { AuthContext } from '../../providers/AuthProvider';
-
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const NavBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    
-    const {user,logOut} = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext);
 
-    const handleLogout =()=> {
-         logOut()
-         .then(() => {})
-         .then(error => console.error(error))
-    } 
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .then((error) => console.error(error));
+  };
 
-    return (
-        <div className="bg-neutral">
+  return (
+    <div className="bg-neutral">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full md:px-2 lg:max-w-screen-xl lg:px-1">
         <div className="relative flex items-center justify-between">
           {/* Logo Section */}
           <Link to="/">
-                <h2 className='text-2xl font-bold text-white '>Happy Toys</h2>
+            <h2 className="text-2xl font-bold text-white ">Happy Toys</h2>
             {/* <img className="mb-1 w-36 md:w-44 " src='' alt="" /> */}
           </Link>
 
@@ -40,11 +38,43 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink
-                to="/blog"
+                to="/alltoys"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                All Toys
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/blogs"
                 className={({ isActive }) => (isActive ? "active" : "default")}
               >
                 Blog
               </NavLink>
+            </li>
+            <li>
+              {user && (
+                <NavLink
+                  to="/addatoys"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "default"
+                  }
+                >
+                  Add A Toy
+                </NavLink>
+              )}
+            </li>
+            <li>
+              {user && (
+                <NavLink
+                  to="/mytoys"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "default"
+                  }
+                >
+                  My Toys
+                </NavLink>
+              )}
             </li>
             <li className="flex items-center gap-3">
               <div>
@@ -89,7 +119,8 @@ const NavBar = () => {
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <Link to="/">
-                        <img className="mb-1 w-36 " src={logo} alt="" />
+                        {/* <img className="mb-1 w-36 " src={logo} alt="" /> */}
+                        <h2 className="text-2xl font-bold text-white ">Happy Toys</h2>
                       </Link>
                     </div>
                     {/* Dropdown menu close button */}
@@ -112,8 +143,23 @@ const NavBar = () => {
                         </Link>
                       </li>
                       <li>
+                        <Link to="/alltoys" className="default">
+                          All Toys
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/addatoys" className="default">
+                          Add A Toy
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/mytoys" className="default">
+                          My Toys
+                        </Link>
+                      </li>
+                      <li>
                         <Link
-                          to="/blog"
+                          to="/blogs"
                           className="font-medium tracking-wide text-yellow-600 transition-colors duration-200 hover:text-yellow-300"
                         >
                           Blog
@@ -153,7 +199,7 @@ const NavBar = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default NavBar;
