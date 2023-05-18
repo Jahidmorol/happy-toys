@@ -1,9 +1,10 @@
 import React from 'react';
+import Toys from './Toys';
 
 const Alltoys = () => {
     return (
         <div>
-            its all toys page
+            <Toys></Toys>
         </div>
     );
 };
