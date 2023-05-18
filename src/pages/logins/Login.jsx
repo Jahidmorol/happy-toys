@@ -1,6 +1,6 @@
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import signin from '../../assets/4116.jpg'
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import signin from '../../assets/login.png'
 
 const Login = () => {
 
@@ -21,8 +21,8 @@ const Login = () => {
 
   return (
     <div className="hero min-h-[32rem] rounded mt-10 bg-base-200">
-      <div className="hero-content md:gap-8 flex-col lg:flex-row">
-        <div className="text-center lg:text-left md:w-1/2">
+      <div className="hero-content md:gap-12 flex-col lg:flex-row">
+        <div className="text-center lg:text-left md:w-1/3">
           <img src={signin} alt="login" />
         </div>
         <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-100 md:w-1/2">
@@ -60,13 +60,13 @@ const Login = () => {
                 <input
                   type="submit"
                   value="Login"
-                  className="btn bg-[#FF3811]"
+                  className="btn text-black hover:text-white bg-[#3BD2E3]"
                 />
               </div>
             </form>
             <p className="text-center my-3">
-              New in CarDoctor?{" "}
-              <Link to="/login/signup" className="text-[#FF3811]">
+              New in Happy Toys?{" "}
+              <Link to="/login/signup" className="text-[#3BD2E3]">
                 Sign Up
               </Link>
             </p>
