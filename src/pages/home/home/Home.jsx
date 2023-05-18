@@ -16,7 +16,7 @@ const Home = () => {
         className="hero min-h-screen bg-base-200"
       >
         <div className="hero-content flex-col lg:flex-row-reverse gap-5 md:gap-10">
-          <img src={child} className=" rounded-lg w-[90%] md:w-[45%]" />
+          <img src={child} className=" rounded-lg w-[90%] md:w-[45%] animate-pulse" />
           <div className="text-white max-w-lg">
             <h1 className="text-4xl md:text-5xl font-bold">
               BEST TOYS FOR <br /> YOUR KID!

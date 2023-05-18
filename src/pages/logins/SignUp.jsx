@@ -1,10 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import login from '../../assets/login.png'
+import { AuthContext } from "../../providers/AuthProvider";
 
 const SignUp = () => {
 
-
+    const {createUser, updateUser, setReload} = useContext(AuthContext)
+    const navigate = useNavigate()
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,7 +16,20 @@ const SignUp = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, email, password);
+    const photo = form.photo.value;
+    console.log(name, email, password, photo);
+
+    createUser(email, password)
+    .then(result => {
+        const createUser = result.user
+        updateUser(createUser, name, photo)
+        .then(result => {
+            setReload(new Date().getTime());
+            form.reset();
+            navigate('/')
+        })
+        .catch(error => console.error(error))
+    })
   };
 
 
@@ -36,6 +52,17 @@ const SignUp = () => {
                   type="text"
                   name="name"
                   placeholder="name"
+                  className="input input-bordered"
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo Url</span>
+                </label>
+                <input
+                  type="text"
+                  name="photo"
+                  placeholder="Photo url"
                   className="input input-bordered"
                 />
               </div>

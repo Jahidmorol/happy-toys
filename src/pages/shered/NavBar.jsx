@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaRegTimesCircle, FaUserCircle } from "react-icons/fa";
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
 
 const NavBar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     
-    const [user, setUser] = useState('jahid')
+    const {user,logOut} = useContext(AuthContext)
+
     const handleLogout =()=> {
-         
+         logOut()
+         .then(() => {})
+         .then(error => console.error(error))
     } 
 
     return (

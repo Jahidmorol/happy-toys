@@ -1,8 +1,12 @@
 import React from "react";
+import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import signin from '../../assets/login.png'
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+
+    const {logIn} = useContext(AuthContext)
 
     const location = useLocation();
   const navigate = useNavigate();
@@ -16,6 +20,17 @@ const Login = () => {
     const password = form.password.value;
     console.log(email, password);
 
+    logIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.error(errorMessage);
+        // setErrorMessage(errorMessage)
+      });
 
   }
 
