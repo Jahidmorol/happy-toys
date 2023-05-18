@@ -66,7 +66,7 @@ const Login = () => {
             </form>
             <p className="text-center my-3">
               New in Happy Toys?{" "}
-              <Link to="/login/signup" className="text-[#3BD2E3]">
+              <Link to="/signup" className="text-[#3BD2E3]">
                 Sign Up
               </Link>
             </p>
