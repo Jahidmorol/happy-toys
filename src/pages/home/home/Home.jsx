@@ -1,21 +1,24 @@
 import React from "react";
 import backgroundImage from "../../../assets/hero-bg.png";
 import child from "../../../assets/slider-img.png";
+import Toys from "../Toys";
 
 const Home = () => {
   // const backgroundImage = 'url("../../../assets/hero-bg.png")'
   return (
-    <div className="">
+    <div className=" mx-auto">
       <div
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          // backgroundSize: "cover",
+          backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          height: '820px',
+          width: '100%'
         }}
-        className="hero min-h-screen bg-base-200"
+        className=" min-h-screen bg-base-200"
       >
-        <div className="hero-content flex-col lg:flex-row-reverse gap-5 md:gap-10">
+        <div className="hero-content flex-col lg:flex-row-reverse gap-5 md:gap-10 md:pt-32">
           <img src={child} className=" rounded-lg w-[90%] md:w-[45%] animate-pulse" />
           <div className="text-white max-w-lg">
             <h1 className="text-4xl md:text-5xl font-bold">
@@ -31,6 +34,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+        <Toys></Toys>
     </div>
   );
 };
