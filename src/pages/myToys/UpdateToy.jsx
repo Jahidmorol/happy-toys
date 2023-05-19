@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import updateImg from '../../assets/update.png'
 
 const UpdateToy = () => {
   const toy = useLoaderData();
@@ -52,7 +53,12 @@ const UpdateToy = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto my-28">
+    <div className="my-10 md:my-28 md:flex items-center justify-center gap-5 mx-auto w-[95%] md:w-[75%]">
+        <div className="md:1/2">
+            <img className="md:h-96" src={updateImg} alt="updateImg" />
+        </div>
+        <div className="md:w-1/2">
+        <form onSubmit={handleSubmit} className="max-w-md mx-auto">
       <div className="mb-4">
         <label htmlFor="price" className="block text-gray-700 font-bold mb-2">
           Price
@@ -105,6 +111,8 @@ const UpdateToy = () => {
         />
       </div>
     </form>
+        </div>
+    </div>
   );
 };
 
