@@ -47,6 +47,7 @@ const MyToys = () => {
     });
   };
 
+
   return (
     <div className="overflow-x-auto w-full my-10 ">
       <table className="table mx-auto w-10/12">

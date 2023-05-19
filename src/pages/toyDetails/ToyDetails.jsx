@@ -31,7 +31,7 @@ const ToyDetails = () => {
           <span className="font-semibold text-[#3DC2CA]">Price:</span> $ {price}
         </p>
         <p className="text-lg  mb-2">
-          <span className="font-semibold text-[#3DC2CA]">Rating:</span> {rating}/5
+          <span className="font-semibold text-[#3DC2CA]">Rating:</span> {rating}
         </p>
         <p className="text-lg mb-2">
           <span className="font-semibold text-[#3DC2CA] ">Available Quantity:</span> {availableQuantity}

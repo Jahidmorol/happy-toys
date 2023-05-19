@@ -1,5 +1,6 @@
 import React from "react";
 import { FaRegTimesCircle, FaTimes, FaXbox } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const MyToy = ({ myToy , handleDelete }) => {
   const {
@@ -40,7 +41,7 @@ const MyToy = ({ myToy , handleDelete }) => {
         <td></td>
         <td>Available Quantity: {availableQuantity}</td>
         <th className="p-0 text-left">
-          <button className="btn btn-xs">Update</button>
+          <Link to={`/update/${_id}`}><button className="btn btn-xs">Update</button></Link>
         </th>
       </tr>
     </tbody>

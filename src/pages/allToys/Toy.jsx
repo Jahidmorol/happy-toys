@@ -24,7 +24,7 @@ const Toy = ({ toy }) => {
         <h2 className="card-title">{toyName}</h2>
         <div className="flex items-center justify-between">
           <p className="text-[#3DC2CA]">Price: {price}</p>
-          <p className="">Ratings: {rating}</p>
+          <p className="">Ratings: {rating }</p>
           <div className="card-actions">
             <Link to={`/toydetails/${_id}`}>
               <button className=" btn btn-circle bg-[#3DC2CA]">
