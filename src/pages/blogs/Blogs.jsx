@@ -5,8 +5,8 @@ const Blogs = () => {
     <div className="bg-gray-100 min-h-screen ">
       <div className="my-container py-8">
         <div className="relative md:w-[35%] mx-auto">
-          <div className="h-16 absolute right-4 top-2/3 md:top-1/4 mask mask-hexagon-2 bg-[#3DC2CA]">jahid</div>
-          <div className="h-16 absolute left-4 bottom-1/2 md:bottom-1/4 mask mask-hexagon-2 bg-[#3DC2CA]">jahid</div>
+          <div className="h-16 absolute right-4 top-2/3 md:top-1/4 mask mask-hexagon-2 bg-[#F98866]">jahid</div>
+          <div className="h-16 absolute left-4 bottom-1/2 md:bottom-1/4 mask mask-hexagon-2 bg-[#F98866]">jahid</div>
 
           <h1 className=" text-3xl font-bold mb-10 text-center">
             Welcome to My Blog
@@ -14,7 +14,7 @@ const Blogs = () => {
         </div>
 
         <div className="my-6">
-          <h2 className="text-2xl text-[#3DC2CA] font-semibold mb-2">
+          <h2 className="text-2xl text-[#F98866] font-semibold mb-2">
             1. What is an access token and refresh token?
           </h2>
           <p className="font-bold text-gray-500 ms-3"># Access Token</p>
@@ -31,7 +31,7 @@ const Blogs = () => {
         </div>
 
         <div className="my-6">
-          <h2 className="text-2xl text-[#3DC2CA] font-semibold mb-2">
+          <h2 className="text-2xl text-[#F98866] font-semibold mb-2">
             2. Compare SQL and NoSQL databases?
           </h2>
           <p className="font-bold text-gray-500 ms-3"># SQL</p>
@@ -50,7 +50,7 @@ const Blogs = () => {
         </div>
 
         <div className="my-6">
-          <h2 className="text-2xl text-[#3DC2CA] font-semibold mb-2">
+          <h2 className="text-2xl text-[#F98866] font-semibold mb-2">
             3. What is Express.js? What is Nest.js?
           </h2>
           <p className="font-bold text-gray-500 ms-3"># Node.js</p>
@@ -70,7 +70,7 @@ const Blogs = () => {
         </div>
 
         <div className="my-6">
-          <h2 className="text-2xl text-[#3DC2CA] font-semibold mb-2">
+          <h2 className="text-2xl text-[#F98866] font-semibold mb-2">
             4. What is MongoDB aggregate and how does it work?
           </h2>
           <p className="text-gray-800 ms-3">

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
-import { useEffect } from "react";
-
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import ToyCategory from "./ToyCategory";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 
 const ToysTabs = () => {
   const [toys, setToys] = useState([]);
@@ -24,9 +26,13 @@ const ToysTabs = () => {
     setCategory(subCategory);
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Shop by Category</h1>
+      <h1 data-aos="flip-down" className="text-3xl font-bold mb-4">Shop by Category</h1>
       <Tabs >
         <TabList>
           <Tab onClick={() => handleActibTab("hors-toy")}>Hors Toy</Tab>
@@ -43,33 +49,6 @@ const ToysTabs = () => {
         
       </Tabs>
     </div>
-
-    // <div>
-    //   <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-
-    //     <TabPanel>
-    //       <div className="grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
-    //         {toys.map((toy) => (
-    //           <ToyCategory key={toy._id} toy={toy}></ToyCategory>
-    //         ))}
-    //       </div>
-    //     </TabPanel>
-    //     <TabPanel>
-    //     <div className="grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
-    //         {toys.map((toy) => (
-    //           <ToyCategory key={toy._id} toy={toy}></ToyCategory>
-    //         ))}
-    //       </div>
-    //     </TabPanel>
-    //     <TabPanel>
-    //     <div className="grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
-    //         {toys.map((toy) => (
-    //           <ToyCategory key={toy._id} toy={toy}></ToyCategory>
-    //         ))}
-    //       </div>
-    //     </TabPanel>
-    //   </Tabs>
-    // </div>
   );
 };
 

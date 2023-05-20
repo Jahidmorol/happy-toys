@@ -70,7 +70,7 @@ const AddAToys = () => {
                 type="text"
                 placeholder="Toy Name"
                 name="toyName"
-                className="input input-bordered border-[#3DC2CA]"
+                className="input input-bordered border-[#F98866]"
                 required
               />
             </div>
@@ -83,7 +83,7 @@ const AddAToys = () => {
                 defaultValue={user.displayName}
                 // placeholder="Seller Name"
                 name="sellerName"
-                className="input input-bordered border-[#3DC2CA]"
+                className="input input-bordered border-[#F98866]"
                 required
               />
             </div>
@@ -98,7 +98,7 @@ const AddAToys = () => {
                 defaultValue={user.email}
                 // placeholder="Seller Name"
                 name="sellerEmail"
-                className="input input-bordered border-[#3DC2CA]"
+                className="input input-bordered border-[#F98866]"
                 required
               />
             </div>
@@ -108,7 +108,7 @@ const AddAToys = () => {
               </label>
               <select
               value={selectedOption}
-              className="py-3 px-2 rounded-md border border-[#3DC2CA]"
+              className="py-3 px-2 rounded-md border border-[#F98866]"
               onChange={handleOptionChange}
             >
               <option value="">Select Sub Cetegor</option>
@@ -128,7 +128,7 @@ const AddAToys = () => {
                 type="text"
                 placeholder="Price"
                 name="price"
-                className="input input-bordered border-[#3DC2CA]"
+                className="input input-bordered border-[#F98866]"
               />
             </div>
             <div className="form-control md:w-1/2">
@@ -139,7 +139,7 @@ const AddAToys = () => {
                 type="text"
                 placeholder="Rating"
                 name="rating"
-                className="input input-bordered border-[#3DC2CA]"
+                className="input input-bordered border-[#F98866]"
               />
             </div>
           </div>
@@ -152,7 +152,7 @@ const AddAToys = () => {
                 type="text"
                 placeholder="Available quantity"
                 name="availableQuantity"
-                className="input input-bordered border-[#3DC2CA]"
+                className="input input-bordered border-[#F98866]"
               />
             </div>
             <div className="form-control md:w-1/2">
@@ -163,7 +163,7 @@ const AddAToys = () => {
                 type="text"
                 placeholder="Photo Url"
                 name="photoUrl"
-                className="input input-bordered border-[#3DC2CA]"
+                className="input input-bordered border-[#F98866]"
               />
             </div>
           </div>
@@ -171,10 +171,10 @@ const AddAToys = () => {
           <textarea
             placeholder="Description"
             name="description"
-            className="textarea border-[#3DC2CA] textarea-md w-full mt-6 h-[6rem]"
+            className="textarea border-[#F98866] textarea-md w-full mt-6 h-[6rem]"
           ></textarea>
           <div className="form-control mt-6">
-            <input type="submit" value="Add Toy" className="btn bg-[#3DC2CA]" />
+            <input type="submit" value="Add Toy" className="btn bg-[#F98866]" />
           </div>
         </form>
       </div>

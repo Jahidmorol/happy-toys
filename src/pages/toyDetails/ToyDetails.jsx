@@ -20,24 +20,24 @@ const ToyDetails = () => {
         <img src={photoUrl} alt={toyName} className="w-full h-auto" />
       </div>
       <div className="md:w-1/2 md:pl-8">
-        <h2 className="text-4xl md:text-5xl text-[#3DC2CA] font-bold mb-4">{toyName}</h2>
+        <h2 className="text-4xl md:text-5xl text-[#F98866] font-bold mb-4">{toyName}</h2>
         <p className="text-lg  mb-2">
-          <span className="font-semibold text-[#3DC2CA]">Seller:</span> {sellerName}
+          <span className="font-semibold text-[#F98866]">Seller:</span> {sellerName}
         </p>
         <p className="text-lg  mb-2">
-          <span className="font-semibold text-[#3DC2CA]">Email:</span> {sellerEmail}
+          <span className="font-semibold text-[#F98866]">Email:</span> {sellerEmail}
         </p>
         <p className="text-lg  mb-2">
-          <span className="font-semibold text-[#3DC2CA]">Price:</span> $ {price}
+          <span className="font-semibold text-[#F98866]">Price:</span> $ {price}
         </p>
         <p className="text-lg  mb-2">
-          <span className="font-semibold text-[#3DC2CA]">Rating:</span> {rating}
+          <span className="font-semibold text-[#F98866]">Rating:</span> {rating}
         </p>
         <p className="text-lg mb-2">
-          <span className="font-semibold text-[#3DC2CA] ">Available Quantity:</span> {availableQuantity}
+          <span className="font-semibold text-[#F98866] ">Available Quantity:</span> {availableQuantity}
         </p>
         <div className="mt-4">
-          <h3 className="text-xl font-semibold text-[#3DC2CA] mb-2">Description</h3>
+          <h3 className="text-xl font-semibold text-[#F98866] mb-2">Description</h3>
           <p className="text-lg">{description}</p>
         </div>
       </div>

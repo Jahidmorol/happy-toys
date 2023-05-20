@@ -1,30 +1,38 @@
-import React from "react";
-import { Tabs } from "react-tabs";
-import backgroundImage from "../../../assets/hero-bg.png";
+import React, { useEffect } from "react";
+import backgroundImage from "../../../assets/Hred.png";
 import child from "../../../assets/slider-img.png";
-import Toys from "../../allToys/Toys";
 import ToysTabs from "../tabs/ToysTabs";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = () => {
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
+
   return (
     <div className=" mx-auto">
       <div
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
+          backgroundColor: "white",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           height: "850px",
           width: "100%",
         }}
-        className=" min-h-screen bg-base-200 mb-5"
+        className=" min-h-screen mb-5"
       >
         <div className="hero-content flex-col lg:flex-row-reverse gap-5 md:gap-10 md:pt-32">
           <img
+            data-aos="fade-left"
             src={child}
             className=" rounded-lg w-[90%] md:w-[45%] animate-pulse"
           />
-          <div className="text-white max-w-lg">
+          <div data-aos="fade-right" className="text-white max-w-lg">
             <h1 className="text-4xl md:text-5xl font-bold">
               BEST TOYS FOR <br /> YOUR KID!
             </h1>
