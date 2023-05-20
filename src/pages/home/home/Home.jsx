@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import backgroundImage from "../../../assets/Hred.png";
+import backgroundImage from "../../../assets/Hgreen.png";
 import child from "../../../assets/slider-img.png";
 import ToysTabs from "../tabs/ToysTabs";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Gallery from "../Gallery";
 
 const Home = () => {
 
@@ -50,6 +51,7 @@ const Home = () => {
       <div className="text-center container mx-auto">
         <ToysTabs></ToysTabs>
       </div>
+      <Gallery></Gallery>
     </div>
   );
 };

@@ -16,7 +16,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="bg-[#F98866]">
+    <div className="bg-[#80BD9E]">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full md:px-2 lg:max-w-screen-xl lg:px-1">
         <div className="relative flex items-center justify-between">
           {/* Logo Section */}

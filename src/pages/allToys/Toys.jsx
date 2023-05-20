@@ -42,7 +42,7 @@ const Toys = () => {
             <button onClick={handleSerchBtn} className="btn btn-square">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-[#F98866]"
+                className="h-6 w-6 text-[#80BD9E]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

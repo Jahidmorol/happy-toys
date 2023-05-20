@@ -58,7 +58,7 @@ const MyToys = () => {
 
       <div className="w-36 mx-auto mt-7">
       <div className="dropdown">
-        <label tabIndex={0} className="btn m-1 bg-[#F98866]">
+        <label tabIndex={0} className="btn m-1 bg-[#80BD9E]">
           Sort By Price
         </label>
         <ul

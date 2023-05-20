@@ -23,11 +23,11 @@ const Toy = ({ toy }) => {
       <div className="card-body">
         <h2 className="card-title">{toyName}</h2>
         <div className="flex items-center justify-between">
-          <p className="text-[#F98866]">Price: {price}</p>
+          <p className="text-[#80BD9E]">Price: {price}</p>
           <p className="">Ratings: {rating }</p>
           <div className="card-actions">
             <Link to={`/toydetails/${_id}`}>
-              <button className=" btn btn-circle bg-[#F98866]">
+              <button className=" btn btn-circle bg-[#80BD9E]">
                 <FaLongArrowAltRight className="text-2xl"></FaLongArrowAltRight>
               </button>
             </Link>

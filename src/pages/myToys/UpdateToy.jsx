@@ -107,7 +107,7 @@ const UpdateToy = () => {
         <input
           type="submit"
           value="Update"
-          className="btn bg-[#F98866] btn-block"
+          className="btn bg-[#80BD9E] btn-block"
         />
       </div>
     </form>
