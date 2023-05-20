@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const AddAToys = () => {
   const { user } = useContext(AuthContext);
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,7 +18,7 @@ const AddAToys = () => {
     const toyName = form.toyName.value;
     const sellerName = form.sellerName.value;
     const sellerEmail = user?.email;
-    const subCategory = form.subCategory.value;
+    const subCategory = selectedOption;
     const price = form.price.value;
     const rating = form.rating.value;
     const availableQuantity = form.availableQuantity.value;
@@ -30,7 +35,7 @@ const AddAToys = () => {
       photoUrl,
       description,
     };
-    // console.log(newToy);
+    console.log(newToy);
     fetch('http://localhost:5000/addatoy', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -49,6 +54,7 @@ const AddAToys = () => {
           }
     })
   };
+
 
   return (
     <div className="my-container rounded-lg">
@@ -100,14 +106,18 @@ const AddAToys = () => {
               <label className="label">
                 <span className="label-text">Sub-Category</span>
               </label>
-              <input
-                type="text"
-                placeholder="Sub-Category"
-                name="subCategory"
-                className="input input-bordered border-[#3DC2CA]"
-                required
-              />
+              <select
+              value={selectedOption}
+              className="py-3 px-2 rounded-md border border-[#3DC2CA]"
+              onChange={handleOptionChange}
+            >
+              <option value="">Select Sub Cetegor</option>
+              <option value="hors-toy">Horse Toy</option>
+              <option value="cow-toy">Cow Toy</option>
+              <option value="cat-toy">Cat-Toy</option>
+            </select>
             </div>
+            
           </div>
           <div className="md:flex gap-5">
             <div className="form-control md:w-1/2">
