@@ -12,10 +12,19 @@ import img9 from "../../assets/gallary/img (9).jpg";
 const Gallery = () => {
   const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
   return (
-    <div className="grid md:grid-cols-2 gap-3 gap-x-0 lg:grid-cols-3 border-2 w-[70%] mx-auto">
-      {images.map((img, index) => (
-        <div key={index} className=" w-64 h-64 mx-auto border bg-[#80BD9E]"> <img  src={img} className="h-56 w-56 mx-auto mt-3 "></img></div>
-      ))}
+    <div className="bg-[#80BD9E] py-16">
+        <h2 className="text-4xl text-center font-bold mb-6">New Arrivals</h2>
+      <div className="grid md:grid-cols-2 gap-3 gap-x-0 lg:grid-cols-3 w-[70%] mx-auto">
+        {images.map((img, index) => (
+          <div
+            key={index}
+            className=" w-64 h-64 mx-auto border-2 rounded-md border-neutral bg-slate-100"
+          >
+            {" "}
+            <img src={img} className="h-56 w-56 mx-auto mt-3 "></img>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

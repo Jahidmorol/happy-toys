@@ -26,7 +26,7 @@ const Toy = ({ toy }) => {
           <p className="text-[#80BD9E]">Price: {price}</p>
           <p className="">Ratings: {rating }</p>
           <div className="card-actions">
-            <Link to={`/toydetails/${_id}`}>
+            <Link to={`/toydetails/${_id}`} state={toyName}>
               <button className=" btn btn-circle bg-[#80BD9E]">
                 <FaLongArrowAltRight className="text-2xl"></FaLongArrowAltRight>
               </button>

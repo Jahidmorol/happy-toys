@@ -1,0 +1,39 @@
+import React from "react";
+import about from "../../../assets/gallary/about-img.jpg"
+
+const AboutUs = () => {
+  return (
+    <div className="bg-white pt-10 mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="lg:text-center">
+          <h2 className="text-3xl leading-8 font-bold tracking-tight text-gray-900 md:text-4xl">
+            About Us
+          </h2>
+          <p className="mt-2 max-w-2xl text-xl text-gray-500 mx-auto">
+            Welcome to our animal toy store! We are passionate about bringing joy to children and animal lovers with our wide range of high-quality and adorable animal toys.
+          </p>
+        </div>
+        <div className="mt-10">
+          <div className=" bg-slate-100 rounded-lg shadow-md p-8 md:flex md:items-center">
+            <img
+              className="w-32 h-32 rounded-full mx-auto md:mx-0 md:mr-8"
+              src={about}
+              alt="About Us"
+            />
+            <div className="mt-4 md:mt-0">
+              <h3 className="text-xl leading-6 font-bold text-neutral">
+                Our Story
+              </h3>
+              <p className="mt-2 text-base text-neutral">
+                We started our journey in 2010 with a mission to create a world where children can explore and learn about animals through play. Since then, we have been dedicated to curating the best animal toys from around the world, ensuring that each toy meets our high standards of safety, durability, and cuteness!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  );
+};
+
+export default AboutUs;

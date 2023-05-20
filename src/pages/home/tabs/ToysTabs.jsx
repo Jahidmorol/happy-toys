@@ -32,7 +32,7 @@ const ToysTabs = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 data-aos="flip-down" className="text-3xl font-bold mb-4">Shop by Category</h1>
+      <h1 data-aos="flip-down" className="text-4xl font-bold my-10">Shop by Category</h1>
       <Tabs >
         <TabList>
           <Tab onClick={() => handleActibTab("hors-toy")}>Hors Toy</Tab>
@@ -41,7 +41,7 @@ const ToysTabs = () => {
         </TabList>
 
         
-          <div className="grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="w-[85%] mx-auto grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
             {toys.map((toy) => (
               <ToyCategory key={toy._id} toy={toy}></ToyCategory>
             ))}

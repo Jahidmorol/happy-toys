@@ -5,6 +5,8 @@ import ToysTabs from "../tabs/ToysTabs";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Gallery from "../Gallery";
+import Review from "../Review";
+import AboutUs from "./AboutUs";
 
 const Home = () => {
 
@@ -48,10 +50,13 @@ const Home = () => {
         </div>
       </div>
       {/* another section  */}
+      <Review></Review>
+      <Gallery></Gallery>
       <div className="text-center container mx-auto">
         <ToysTabs></ToysTabs>
       </div>
-      <Gallery></Gallery>
+      <AboutUs></AboutUs>
+      
     </div>
   );
 };
