@@ -8,6 +8,7 @@ import Login from "../pages/logins/Login";
 import SignUp from "../pages/logins/SignUp";
 import MyToys from "../pages/myToys/MyToys";
 import UpdateToy from "../pages/myToys/UpdateToy";
+import Error from "../pages/shered/Error";
 import ToyDetails from "../pages/toyDetails/ToyDetails";
 import PrivateRoutes from "./PrivateRoutes";
 
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",

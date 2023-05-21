@@ -21,7 +21,7 @@ const ToyDetails = () => {
         <img src={photoUrl} alt={toyName} className="w-[95%] bg-slate-100 mx-auto max-h-[95%] mt-2" /> 
         </div>
       </div>
-      <div className=" md:w-1/2 ">
+      <div className=" md:w-1/2">
         <h2 className="text-4xl md:text-5xl text-[#80BD9E] font-bold mb-5">{toyName}</h2>
         <p className="text-gray-500  mb-2">
           <span className="font-semibold text-[#80BD9E]">Seller:</span> {sellerName}
