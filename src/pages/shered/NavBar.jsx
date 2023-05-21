@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaRegTimesCircle, FaUserCircle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import logo from '../../assets/gallary/logo.png'
+import logo from "../../assets/gallary/logo.png";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +23,9 @@ const NavBar = () => {
           {/* Logo Section */}
           <Link to="/" className="flex items-center">
             <img className="mb-1 w-10 " src={logo} alt="" />
-            <h2 className="text-2xl font-bold text-neutral "><span className="text-white">HAPPY</span> TOYS</h2>
+            <h2 className="text-2xl font-bold text-neutral ">
+              <span className="text-white">HAPPY</span> TOYS
+            </h2>
           </Link>
 
           {/* Nav Items Section */}
@@ -32,7 +34,9 @@ const NavBar = () => {
             <li>
               <NavLink
                 to="/"
-                className={({ isActive }) => (isActive ? "active" : "default")}
+                className={({ isActive }) =>
+                  isActive ? "active" : "default-b"
+                }
               >
                 Home
               </NavLink>
@@ -40,7 +44,9 @@ const NavBar = () => {
             <li>
               <NavLink
                 to="/alltoys"
-                className={({ isActive }) => (isActive ? "active" : "default")}
+                className={({ isActive }) =>
+                  isActive ? "active" : "default-b"
+                }
               >
                 All Toys
               </NavLink>
@@ -48,7 +54,9 @@ const NavBar = () => {
             <li>
               <NavLink
                 to="/blogs"
-                className={({ isActive }) => (isActive ? "active" : "default")}
+                className={({ isActive }) =>
+                  isActive ? "active" : "default-b"
+                }
               >
                 Blog
               </NavLink>
@@ -58,7 +66,7 @@ const NavBar = () => {
                 <NavLink
                   to="/addatoys"
                   className={({ isActive }) =>
-                    isActive ? "active" : "default"
+                    isActive ? "active" : "default-b"
                   }
                 >
                   Add A Toy
@@ -70,7 +78,7 @@ const NavBar = () => {
                 <NavLink
                   to="/mytoys"
                   className={({ isActive }) =>
-                    isActive ? "active" : "default"
+                    isActive ? "active" : "default-b"
                   }
                 >
                   My Toys
@@ -111,7 +119,7 @@ const NavBar = () => {
               title="Open Menu"
               onClick={() => setIsMenuOpen(true)}
             >
-              <FaBars className="w-5 text-yellow-600 mt-2" />
+              <FaBars className="w-5 text-xl text-white mt-2" />
             </button>
             {isMenuOpen && (
               <div className="absolute top-0 left-0 w-full z-10">
@@ -119,9 +127,11 @@ const NavBar = () => {
                   {/* Logo & Button section */}
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <Link to="/">
-                        {/* <img className="mb-1 w-36 " src={logo} alt="" /> */}
-                        <h2 className="text-2xl font-bold text-white ">Happy Toys</h2>
+                      <Link to="/" className="flex items-center ">
+                        <img className="mb-1 w-10 h-10" src={logo} alt="" />
+                        <h2 className="text-xl font-bold text-white ">
+                          Happy Toys
+                        </h2>
                       </Link>
                     </div>
                     {/* Dropdown menu close button */}
@@ -131,7 +141,7 @@ const NavBar = () => {
                         title="Close Menu"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        <FaRegTimesCircle className="w-5 text-white" />
+                        <FaRegTimesCircle className="mt-1 text-xl text-white" />
                       </button>
                     </div>
                   </div>
@@ -139,30 +149,31 @@ const NavBar = () => {
                   <nav>
                     <ul className="space-y-4">
                       <li>
-                        <Link to="/" className="default">
+                        <Link to="/" className="default-b">
                           Home
                         </Link>
                       </li>
                       <li>
-                        <Link to="/alltoys" className="default">
+                        <Link to="/alltoys" className="default-b">
                           All Toys
                         </Link>
                       </li>
                       <li>
-                        <Link to="/addatoys" className="default">
-                          Add A Toy
-                        </Link>
+                        {user && (
+                          <Link to="/addatoys" className="default-b">
+                            Add A Toy
+                          </Link>
+                        )}
                       </li>
                       <li>
-                        <Link to="/mytoys" className="default">
-                          My Toys
-                        </Link>
+                        {user && (
+                          <Link to="/mytoys" className="default-b">
+                            My Toys
+                          </Link>
+                        )}
                       </li>
                       <li>
-                        <Link
-                          to="/blogs"
-                          className="font-medium tracking-wide text-yellow-600 transition-colors duration-200 hover:text-yellow-300"
-                        >
+                        <Link to="/blogs" className="default-b">
                           Blog
                         </Link>
                       </li>
@@ -186,7 +197,7 @@ const NavBar = () => {
                           </button>
                         ) : (
                           <Link to="/login">
-                            <button className="btn ">Login</button>
+                            <button className="btn bg-slate-400">Login</button>
                           </Link>
                         )}
                       </li>
