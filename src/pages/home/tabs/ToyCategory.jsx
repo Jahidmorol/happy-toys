@@ -1,9 +1,16 @@
 import React from "react";
 import { FaLongArrowAltRight, FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
+import Loading from "../../shered/Loading";
 
 const ToyCategory = ({ toy }) => {
+
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Loading></Loading>;
+  } 
+
   const {
     toyName,
     sellerName,

@@ -7,7 +7,6 @@ import 'aos/dist/aos.css';
 import Gallery from "../Gallery";
 import Review from "../Review";
 import AboutUs from "./AboutUs";
-import Loading from "../../shered/Loading";
 
 const Home = () => {
 
@@ -57,7 +56,6 @@ const Home = () => {
         <ToysTabs></ToysTabs>
       </div>
       <AboutUs></AboutUs>
-      <Loading></Loading>
     </div>
   );
 };

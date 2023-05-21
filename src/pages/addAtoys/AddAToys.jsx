@@ -4,8 +4,16 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useNavigation } from "react-router-dom";
+import Loading from "../shered/Loading";
 
 const AddAToys = () => {
+
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Loading></Loading>;
+  } 
+
   const { user } = useContext(AuthContext);
   const [selectedOption, setSelectedOption] = useState("");
 

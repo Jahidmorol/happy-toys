@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaRegTimesCircle, FaUserCircle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import logo from '../../assets/gallary/logo.png'
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,9 +21,9 @@ const NavBar = () => {
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full md:px-2 lg:max-w-screen-xl lg:px-1">
         <div className="relative flex items-center justify-between">
           {/* Logo Section */}
-          <Link to="/">
-            <h2 className="text-2xl font-bold text-white ">Happy Toys</h2>
-            {/* <img className="mb-1 w-36 md:w-44 " src='' alt="" /> */}
+          <Link to="/" className="flex items-center">
+            <img className="mb-1 w-10 " src={logo} alt="" />
+            <h2 className="text-2xl font-bold text-neutral "><span className="text-white">HAPPY</span> TOYS</h2>
           </Link>
 
           {/* Nav Items Section */}

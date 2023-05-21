@@ -1,11 +1,18 @@
 import React, { useEffect } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import Swal from "sweetalert2";
 import updateImg from "../../assets/update.png";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Loading from "../shered/Loading";
 
 const UpdateToy = () => {
+
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Loading></Loading>;
+  } 
+
   const toy = useLoaderData();
   const {
     toyName,

@@ -1,8 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import Loading from "../shered/Loading";
 
 const Toy = ({ toy,index }) => {
+
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Loading></Loading>;
+  } 
+
   const {
     toyName,
     sellerName,

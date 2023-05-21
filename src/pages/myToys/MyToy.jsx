@@ -1,8 +1,15 @@
 import React from "react";
-import { FaRegTimesCircle, FaTimes, FaXbox } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaTimes } from "react-icons/fa";
+import { Link, useNavigation } from "react-router-dom";
+import Loading from "../shered/Loading";
 
 const MyToy = ({ myToy , handleDelete }) => {
+
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Loading></Loading>;
+  } 
+
   const {
     toyName,
     sellerName,

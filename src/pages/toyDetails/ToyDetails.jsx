@@ -1,7 +1,14 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
+import Loading from "../shered/Loading";
 
 const ToyDetails = () => {
+
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Loading></Loading>;
+  } 
+
   const toy = useLoaderData();
   const {
     toyName,

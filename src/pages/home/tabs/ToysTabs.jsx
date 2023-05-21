@@ -5,10 +5,18 @@ import "react-tabs/style/react-tabs.css";
 import ToyCategory from "./ToyCategory";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useNavigation } from "react-router-dom";
+import Loading from "../../shered/Loading";
 
 
 
 const ToysTabs = () => {
+
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Loading></Loading>;
+  } 
+
   const [toys, setToys] = useState([]);
   const [category, setCategory] = useState("hors-toy");
   // const [activeTab, setActiveTab] = useState(0);

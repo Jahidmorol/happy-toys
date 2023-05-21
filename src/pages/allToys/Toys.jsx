@@ -3,8 +3,16 @@ import { useState } from "react";
 import Toy from "./Toy";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigation } from "react-router-dom";
+import Loading from "../shered/Loading";
 
 const Toys = () => {
+
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Loading></Loading>;
+  } 
+
   const [toys, setToys] = useState([]);
   const [seacrhToy, setSearchToy] = useState("");
   console.log(seacrhToy);
