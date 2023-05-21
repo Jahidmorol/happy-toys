@@ -10,9 +10,9 @@ const Main = () => {
 
   useEffect(() => {
     if (location.pathname === "/") {
-      document.title = `Happy Toys - Home`;
+      document.title = `Happy Toys | Home`;
     } else {
-      document.title = `Happy Toys ${location.pathname.replace("/", "- ")}`;
+      document.title = `Happy Toys ${location.pathname.replace("/", "| ")}`;
     }
 
     if (location.state) {
