@@ -7,11 +7,10 @@ import { useNavigation } from "react-router-dom";
 import Loading from "../shered/Loading";
 
 const Toys = () => {
-
   const navigation = useNavigation();
   if (navigation.state === "loading") {
     return <Loading></Loading>;
-  } 
+  }
 
   const [toys, setToys] = useState([]);
   const [seacrhToy, setSearchToy] = useState("");
@@ -38,6 +37,10 @@ const Toys = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
+  const handleShowMore = () => {
+    
+  }
 
   return (
     <div className="">
@@ -88,21 +91,32 @@ const Toys = () => {
         <table className="overflow-x-hidden min-w-full bg-white border border-[#80BD9E]">
           <thead>
             <tr>
-              <th className="px-4  py-3 border-[#80BD9E] border text-[#80BD9E]">Num</th>
+              <th className="px-4  py-3 border-[#80BD9E] border text-[#80BD9E]">
+                Num
+              </th>
               <th className="px-4  py-3 border-[#80BD9E] border-b">Seller</th>
               <th className="px-4  py-3 border-[#80BD9E] border-b">Toy Name</th>
-              <th className="px-4  py-3 border-[#80BD9E] border-b">Sub-category</th>
+              <th className="px-4  py-3 border-[#80BD9E] border-b">
+                Sub-category
+              </th>
               <th className="px-4  py-3 border-[#80BD9E] border-b">Price</th>
-              <th className="px-4  py-3 border-[#80BD9E] border-b">Available Quantity</th>
-              <th className="px-4  py-3 border-[#80BD9E] border text-[#80BD9E]">Details</th>
+              <th className="px-4  py-3 border-[#80BD9E] border-b">
+                Available Quantity
+              </th>
+              <th className="px-4  py-3 border-[#80BD9E] border text-[#80BD9E]">
+                Details
+              </th>
             </tr>
           </thead>
           <tbody>
-          {toys.map((toy, index) => (
-            <Toy key={toy._id} toy={toy} index={index}></Toy>
-          ))}
-        </tbody>
+            {toys.map((toy, index) => (
+              <Toy key={toy._id} toy={toy} index={index}></Toy>
+            ))}
+          </tbody>
         </table>
+        <div className="w-36 mx-auto mt-7">
+          <button onClick={handleShowMore} className="btn m-1 bg-[#80BD9E]">Show More</button>
+        </div>
       </div>
     </div>
   );

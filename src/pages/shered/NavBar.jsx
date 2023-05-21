@@ -22,7 +22,7 @@ const NavBar = () => {
         <div className="relative flex items-center justify-between">
           {/* Logo Section */}
           <Link to="/" className="flex items-center">
-            <img className="mb-1 w-10 " src={logo} alt="" />
+            <img className="mb-1 w-12 " src={logo} alt="" />
             <h2 className="text-2xl font-bold text-neutral ">
               <span className="text-white">HAPPY</span> TOYS
             </h2>

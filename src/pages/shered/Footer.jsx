@@ -18,7 +18,7 @@ const Footer = () => {
       <div className="container mx-auto py-8 px-4">
         <div className="flex flex-wrap justify-between">
           <div className="w-full sm:w-1/2 md:w-auto mb-4">
-            <img className="w-20 h-20" src={logo} alt="logo" />
+            <img className="w-24 " src={logo} alt="logo" />
             <h2 className="text-2xl font-bold mb-2">Happy Toys</h2>
             <p className="text-gray-300">
               Explore our wide range of animal toys and find your favorite
