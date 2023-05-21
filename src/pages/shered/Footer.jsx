@@ -26,14 +26,12 @@ const Footer = () => {
             </p>
           </div>
           <div className="w-full sm:w-1/2 md:w-1/4 mb-4">
-            <h3 className="text-lg font-bold mb-2">Categories</h3>
+            <h3 className="text-lg font-bold mb-2">Social</h3>
             <ul className="text-gray-300">
-              <li>HorsToy</li>
-              <li>Cow Toy</li>
-              <li>Pets</li>
-              <li>Cat toy</li>
-              <li>Marine Animals</li>
-              <li>Birds</li>
+              <li className="mt-3"><a target="_blank" href="https://www.facebook.com/" className="link link-hover">Facebook</a></li>
+              <li className="mt-3"><a target="_blank" href="https://www.instagram.com/" className="link link-hover">Instagram</a></li>
+              <li className="mt-3"><a target="_blank" href="https://github.com/" className="link link-hover">Github</a></li>
+              <li className="mt-3"><a target="_blank" href="https://twitter.com/" className="link link-hover">Twitter</a></li>
             </ul>
           </div>
 

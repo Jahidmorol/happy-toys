@@ -15,14 +15,8 @@ const UpdateToy = () => {
 
   const toy = useLoaderData();
   const {
-    toyName,
-    sellerName,
-    sellerEmail,
-    subCategory,
     price,
-    rating,
     availableQuantity,
-    photoUrl,
     description,
     _id,
   } = toy;

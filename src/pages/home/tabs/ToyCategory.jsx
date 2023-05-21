@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaLongArrowAltRight, FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link, useNavigation } from "react-router-dom";
 import Loading from "../../shered/Loading";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 const ToyCategory = ({ toy }) => {
 
@@ -13,18 +15,18 @@ const ToyCategory = ({ toy }) => {
 
   const {
     toyName,
-    sellerName,
-    sellerEmail,
-    subCategory,
     price,
     rating,
-    availableQuantity,
     photoUrl,
-    description,
     _id,
   } = toy;
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+  
   return (
-    <div className="w-[19rem] mx-auto border rounded-md shadow-xl">
+    <div data-aos="fade-up" className="w-[19rem] mx-auto border rounded-md shadow-xl">
       <div className=" h-[12rem] w-[12rem] mx-auto pt-5 ">
         <img src={photoUrl} alt="Shoes" className="rounded-xl mx-auto h-[12rem] w-[12rem]" />
       </div>

@@ -3,27 +3,24 @@ import { useState } from "react";
 import Toy from "./Toy";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useNavigation } from "react-router-dom";
 import Loading from "../shered/Loading";
 
 const Toys = () => {
-  const navigation = useNavigation();
-  if (navigation.state === "loading") {
-    return <Loading></Loading>;
-  }
 
-  const [toys, setToys] = useState([]);
   const [seacrhToy, setSearchToy] = useState("");
-  console.log(seacrhToy);
+  const [toys, setToys] = useState([]);
+  const [limit, setLimit] = useState('20')
+  
 
   useEffect(() => {
-    fetch("https://happy-toys-server.vercel.app/alltoys")
+    fetch(`https://happy-toys-server.vercel.app/alltoys?limit=${limit}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
         setToys(data);
+        
       });
-  }, []);
+  }, [limit]);
 
   const handleSerchBtn = () => {
     fetch(`https://happy-toys-server.vercel.app/searchbyname/${seacrhToy}`)
@@ -39,7 +36,11 @@ const Toys = () => {
   }, []);
 
   const handleShowMore = () => {
-    
+    setLimit(0)
+  }
+
+  if(!toys.length){
+    return <Loading></Loading>
   }
 
   return (
@@ -115,7 +116,7 @@ const Toys = () => {
           </tbody>
         </table>
         <div className="w-36 mx-auto mt-7">
-          <button onClick={handleShowMore} className="btn m-1 bg-[#80BD9E]">Show More</button>
+             <button onClick={handleShowMore} className="btn m-1 bg-[#80BD9E]">Show More</button> 
         </div>
       </div>
     </div>

@@ -6,7 +6,6 @@ import { AuthContext } from "../../providers/AuthProvider";
 import MyToy from "./MyToy";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useNavigation } from "react-router-dom";
 import Loading from "../shered/Loading";
 
 const MyToys = () => {
@@ -24,11 +23,6 @@ const MyToys = () => {
   }, [user]);
 
   const handleDelete = (_id) => {
-    const navigation = useNavigation();
-    if (navigation.state === "loading") {
-      return <Loading></Loading>;
-    }
-
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -66,6 +60,10 @@ const MyToys = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
+  if(!myToys.length){
+    return <Loading></Loading>
+  }
 
   return (
     <div>

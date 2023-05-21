@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaAward, FaHandSparkles, FaShippingFast } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Review = () => {
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <div className="w-[85%] mx-auto my-10 md:my-20 md:flex space-y-5 md:space-y-0 items-center justify-between">
-      <div className=" md:w-80 h-[300px] p-5 text-center rounded-md bg-neutral">
+      <div data-aos="zoom-in-right" className=" md:w-80 h-[300px] p-5 text-center rounded-md bg-neutral">
         <div className="w-20 h-16 rounded-full bg-white mx-auto mb-2">
           <FaShippingFast className="text-neutral mx-auto  pt-3 text-5xl" />
         </div>
@@ -16,7 +23,7 @@ const Review = () => {
           service.
         </p>
       </div>
-      <div className=" md:w-80 h-[300px] p-5 text-center rounded-md bg-neutral">
+      <div data-aos="zoom-in-down" className=" md:w-80 h-[300px] p-5 text-center rounded-md bg-neutral">
         <div className="w-20 h-16 rounded-full bg-white mx-auto mb-2">
           <FaAward className="text-neutral mx-auto pt-3  text-5xl" />
         </div>
@@ -28,7 +35,7 @@ const Review = () => {
           exceptional toys
         </p>
       </div>
-      <div className=" md:w-80 h-[300px] p-5 text-center rounded-md bg-neutral">
+      <div data-aos="zoom-in-left" className=" md:w-80 h-[300px] p-5 text-center rounded-md bg-neutral">
         <div className="w-20 h-16 rounded-full bg-white mx-auto mb-2">
           <FaHandSparkles className="text-neutral mx-auto pt-3  text-5xl" />
         </div>

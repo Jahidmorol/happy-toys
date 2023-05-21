@@ -1,18 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import error from '../../assets/gallary/error.png'
+import { Link, useRouteError } from 'react-router-dom';
+import errorimg from '../../assets/gallary/error.png'
 
 const Error = () => {
+    const { error, status } = useRouteError();
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
       <img
-        src={error}
+        src={errorimg}
         alt="Error"
         className="w-[30rem] h-[20rem]  animate-pulse"
       />
       <h1 className="text-4xl font-bold text-[#80BD9E] mb-4">Oops!</h1>
       <p className="text-lg text-gray-700 mb-8">
-        Something went wrong. Please try again later.
+        {error.message}
       </p>
       <Link
         href="/"
