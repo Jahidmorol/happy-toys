@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: "/toydetails/:id",
         element: <PrivateRoutes><ToyDetails></ToyDetails></PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:5000/toydetails/${params.id}`)
+        loader: ({params}) => fetch(`https://happy-toys-server.vercel.app/toydetails/${params.id}`)
       },
       {
         path: "/mytoys",
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <UpdateToy></UpdateToy>,
-        loader: ({params}) => fetch(`http://localhost:5000/mytoys/${params.id}`)
+        loader: ({params}) => fetch(`https://happy-toys-server.vercel.app/mytoys/${params.id}`)
       },
       {
         path: "/blogs",

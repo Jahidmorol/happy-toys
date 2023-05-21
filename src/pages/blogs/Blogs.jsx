@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Blogs = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <div className="bg-gray-100 min-h-screen ">
       <div className="my-container py-8">
-        <div className="relative md:w-[35%] mx-auto">
+        <div data-aos="flip-down" className="relative md:w-[35%] mx-auto mb-20">
           <div className="h-16 absolute right-4 top-2/3 md:top-1/4 mask mask-hexagon-2 bg-[#80BD9E]">jahid</div>
           <div className="h-16 absolute left-4 bottom-1/2 md:bottom-1/4 mask mask-hexagon-2 bg-[#80BD9E]">jahid</div>
 

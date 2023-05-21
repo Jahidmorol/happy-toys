@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const AddAToys = () => {
   const { user } = useContext(AuthContext);
@@ -36,7 +38,7 @@ const AddAToys = () => {
       description,
     };
     console.log(newToy);
-    fetch('http://localhost:5000/addatoy', {
+    fetch('https://happy-toys-server.vercel.app/addatoy', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(newToy)
@@ -52,14 +54,27 @@ const AddAToys = () => {
               confirmButtonText: 'Done'
             })
           }
+          form.reset()
     })
   };
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
 
   return (
     <div className="my-container rounded-lg">
-      <h2 className="text-4xl text-center font-bold mb-5">Add A Toy</h2>
-      <div className="card-body bg-[#F3F3F3] rounded-lg">
+      {/* <h2 className="text-4xl text-center font-bold mb-5">Add A Toy</h2> */}
+      <div data-aos="flip-down"  className="relative w-[80%] md:w-[25%] mx-auto ">
+          <div className="h-16 absolute right-4 top-2/3 md:top-1/4 mask mask-hexagon-2 text-[#80BD9E] bg-[#80BD9E]">jahid</div>
+          <div className="h-16 absolute left-4 bottom-1/2 md:bottom-1/4 mask mask-hexagon-2 text-[#80BD9E] bg-[#80BD9E]">jahid</div>
+
+          <h1 className=" text-3xl font-bold mb-10 text-center">
+          Add A Toy
+          </h1>
+        </div>
+      <div className="card-body bg-[#F3F3F3] rounded-lg mt-20">
         <form onSubmit={handleSubmit}>
           <div className="md:flex gap-5">
             <div className="form-control md:w-1/2">

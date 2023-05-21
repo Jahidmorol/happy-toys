@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
-const Toy = ({ toy }) => {
+const Toy = ({ toy,index }) => {
   const {
     toyName,
     sellerName,
@@ -16,25 +16,21 @@ const Toy = ({ toy }) => {
     _id,
   } = toy;
   return (
-    <div className="card md:w-96 bg-base-100 shadow-xl">
-      <figure className="px-10 pt-10 h-60">
-        <img src={photoUrl} alt="Shoes" className="rounded-xl" />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">{toyName}</h2>
-        <div className="flex items-center justify-between">
-          <p className="text-[#80BD9E]">Price: {price}</p>
-          <p className="">Ratings: {rating }</p>
-          <div className="card-actions">
-            <Link to={`/toydetails/${_id}`} state={toyName}>
-              <button className=" btn btn-circle bg-[#80BD9E]">
-                <FaLongArrowAltRight className="text-2xl"></FaLongArrowAltRight>
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
+    <tr className="text-center">
+      <th className="px-4 py-3 border-[#80BD9E] text-[#80BD9E] border">{index + 1}</th>
+      <td className="px-4 py-3 border-[#80BD9E] border-b">{sellerName}</td>
+      <td className="px-4 py-3 border-[#80BD9E] border-b">{toyName}</td>
+      <td className="px-4 py-3 border-[#80BD9E] border-b">{subCategory}</td>
+      <td className="px-4 py-3 border-[#80BD9E] border-b">{price}</td>
+      <td className="px-4 py-3 border-[#80BD9E] border-b">{availableQuantity}</td>
+      <td className="px-4 py-3 border-[#80BD9E] border">
+        <Link to={`/toydetails/${_id}`} state={toyName}>
+          <button className=" rounded py-1 px-5 text-white bg-[#80BD9E]">
+            <FaLongArrowAltRight className="text-xl"></FaLongArrowAltRight>
+          </button>
+        </Link>
+      </td>
+    </tr>
   );
 };
 

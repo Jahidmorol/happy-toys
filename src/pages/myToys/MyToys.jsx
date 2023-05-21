@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 import MyToy from "./MyToy";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -11,7 +13,7 @@ const MyToys = () => {
   const [sortType, setSortType] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/mytoys?email=${user.email}`, {})
+    fetch(`https://happy-toys-server.vercel.app/mytoys?email=${user.email}`, {})
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -30,7 +32,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/mytoys/${_id}`, {
+        fetch(`https://happy-toys-server.vercel.app/mytoys/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -47,15 +49,27 @@ const MyToys = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/mytoys/${sortType}?email=${user.email}`)
+    fetch(`https://happy-toys-server.vercel.app/mytoys/${sortType}?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, [sortType]);
 
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
+
   return (
     <div>
+      <div data-aos="flip-down"  className="relative md:w-[20%] mx-auto mt-20">
+          <div className="h-16 absolute right-4 top-2/3 md:top-1/4 mask mask-hexagon-2 text-[#80BD9E] bg-[#80BD9E]">jahid</div>
+          <div className="h-16 absolute left-4 bottom-1/2 md:bottom-1/4 mask mask-hexagon-2 text-[#80BD9E] bg-[#80BD9E]">jahid</div>
 
+          <h1 className=" text-3xl font-bold mb-10 text-center">
+          My Toys
+          </h1>
+        </div>
       <div className="w-36 mx-auto mt-7">
       <div className="dropdown">
         <label tabIndex={0} className="btn m-1 bg-[#80BD9E]">
