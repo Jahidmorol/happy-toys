@@ -133,6 +133,7 @@ const AddAToys = () => {
               value={selectedOption}
               className="py-3 px-2 rounded-md border border-[#80BD9E]"
               onChange={handleOptionChange}
+              required
             >
               <option value="">Select Sub Cetegor</option>
               <option value="hors-toy">Horse Toy</option>
@@ -152,6 +153,7 @@ const AddAToys = () => {
                 placeholder="Price"
                 name="price"
                 className="input input-bordered border-[#80BD9E]"
+                required
               />
             </div>
             <div className="form-control md:w-1/2">
@@ -163,6 +165,7 @@ const AddAToys = () => {
                 placeholder="Rating"
                 name="rating"
                 className="input input-bordered border-[#80BD9E]"
+                required
               />
             </div>
           </div>
@@ -176,6 +179,7 @@ const AddAToys = () => {
                 placeholder="Available quantity"
                 name="availableQuantity"
                 className="input input-bordered border-[#80BD9E]"
+                required
               />
             </div>
             <div className="form-control md:w-1/2">
@@ -187,6 +191,7 @@ const AddAToys = () => {
                 placeholder="Photo Url"
                 name="photoUrl"
                 className="input input-bordered border-[#80BD9E]"
+                required
               />
             </div>
           </div>

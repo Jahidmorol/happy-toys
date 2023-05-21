@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
+import Loading from "../pages/shered/Loading";
 import { AuthContext } from "../providers/AuthProvider";
 
 const PrivateRoutes = ({ children }) => {
@@ -10,26 +11,20 @@ const PrivateRoutes = ({ children }) => {
   const location = useLocation();
 
   if (loading) {
-    return (
-      <div className="text-center my-24">
-        Loding..<span className="animate-ping">.</span>
-      </div>
-    );
+    return <Loading></Loading>;
   }
 
   if (user?.email) {
-    
     return children;
-  }
-  else{
+  } else {
     useEffect(() => {
       Swal.fire({
-        title: 'Warning!',
-        text: 'You have to log in first to view details',
-        icon: 'warning',
-        confirmButtonText: 'OK'
-      })
-    }, [])
+        title: "Warning!",
+        text: "You have to log in first to view details",
+        icon: "warning",
+        confirmButtonText: "OK",
+      });
+    }, []);
   }
 
   return <Navigate to="/login" state={{ from: location }} replace></Navigate>;

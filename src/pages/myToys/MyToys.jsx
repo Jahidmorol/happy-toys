@@ -6,7 +6,6 @@ import { AuthContext } from "../../providers/AuthProvider";
 import MyToy from "./MyToy";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Loading from "../shered/Loading";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -61,9 +60,9 @@ const MyToys = () => {
     AOS.init({ duration: 1000 });
   }, []);
 
-  if(!myToys.length){
-    return <Loading></Loading>
-  }
+  // if(!myToys.length){
+  //   return <Loading></Loading>
+  // }
 
   return (
     <div>
@@ -98,7 +97,7 @@ const MyToys = () => {
 
       <div className="overflow-x-auto w-full mt-1 mb-10 ">
         <table className="table mx-auto w-10/12">
-          {myToys.map((myToy) => (
+          { myToys.map((myToy) => (
             <MyToy
               key={myToy._id}
               myToy={myToy}

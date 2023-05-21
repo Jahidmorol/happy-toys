@@ -39,9 +39,9 @@ const Toys = () => {
     setLimit(0)
   }
 
-  if(!toys.length){
-    return <Loading></Loading>
-  }
+  // if(!toys.length){
+  //   return <Loading></Loading>
+  // }
 
   return (
     <div className="">
