@@ -4,15 +4,9 @@ import Swal from "sweetalert2";
 import updateImg from "../../assets/update.png";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Loading from "../shered/Loading";
 
 const UpdateToy = () => {
-
-  const navigation = useNavigation();
-  if (navigation.state === "loading") {
-    return <Loading></Loading>;
-  } 
-
+ 
   const toy = useLoaderData();
   const {
     price,
@@ -35,6 +29,8 @@ const UpdateToy = () => {
       description,
     };
     console.log(updateToy);
+
+    // 
 
     fetch(`https://happy-toys-server.vercel.app/mytoys/${_id}`, {
       method: "PUT",

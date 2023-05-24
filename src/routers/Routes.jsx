@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <UpdateToy></UpdateToy>,
-        loader: ({params}) => fetch(`https://happy-toys-server.vercel.app/mytoys/${params.id}`)
+        loader: ({params}) => fetch(`https://happy-toys-server.vercel.app/mytoy/${params.id}`)
       },
       {
         path: "/blogs",

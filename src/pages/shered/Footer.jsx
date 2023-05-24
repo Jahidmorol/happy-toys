@@ -9,7 +9,7 @@ const Footer = () => {
       title: "Success Your Submit!",
       text: "Do you want to continue",
       icon: "success",
-      confirmButtonText: "Cool",
+      confirmButtonText: "OK",
     });
     e.target.reset()
   };
